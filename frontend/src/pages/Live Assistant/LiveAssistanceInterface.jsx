@@ -22,7 +22,7 @@ const LiveAssistanceInterface = () => {
   const [lightMode, setLightMode] = useState(false);
   const [chatMessages, setChatMessages] = useState([]); // Store chat messages
   const [newMessage, setNewMessage] = useState(""); // New message input
-  const socket = io("http://localhost:4000");
+  const socket = io("https://buynest-v2-backend.onrender.com");
 
   useEffect(() => {
     // Fetch product details for each item in the cart when the component mounts
@@ -31,7 +31,7 @@ const LiveAssistanceInterface = () => {
       for (const itemId of Object.keys(currentCart)) {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/product/${itemId}`
+            `https://buynest-v2-backend.onrender.com/api/product/${itemId}`
           );
           if (response.data.success) {
             productDetails[itemId] = response.data.product;
@@ -47,7 +47,7 @@ const LiveAssistanceInterface = () => {
     const fetchChatMessages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/messages/${request.userId}`
+          `https://buynest-v2-backend.onrender.com/api/messages/${request.userId}`
         );
         if (response.data.success) {
           setChatMessages(response.data.messages);
@@ -76,7 +76,7 @@ const LiveAssistanceInterface = () => {
       const fetchNewMessages = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/messages/${request.userId}`
+            `https://buynest-v2-backend.onrender.com/api/messages/${request.userId}`
           );
           if (response.data.success) {
             const newMessages = response.data.messages;
@@ -118,7 +118,7 @@ const LiveAssistanceInterface = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/messages",
+        "https://buynest-v2-backend.onrender.com/api/messages",
         messageData
       );
       if (response.data.success) {
