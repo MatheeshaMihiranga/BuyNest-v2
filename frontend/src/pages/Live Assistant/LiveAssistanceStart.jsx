@@ -19,7 +19,7 @@ const LiveAssistanceStart = () => {
 
     try {
       // Send userId, name, and email to the backend to request assistance
-      const response = await axios.post('http://localhost:4000/api/assist', {
+      const response = await axios.post('https://buynest-v2-backend.onrender.com/api/assist', {
         userId,   // Use 'userId' (which is 'id' from localStorage)
         name,      // Pass the name
         email,     // Pass the email

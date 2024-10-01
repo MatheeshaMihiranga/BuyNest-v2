@@ -31,7 +31,7 @@ const FloatingChat = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:4000/api/messages/${userInfo.id}`);
+      const response = await axios.get(`https://buynest-v2-backend.onrender.com/api/messages/${userInfo.id}`);
       setMessages(response.data.messages);
     } catch (error) {
       console.error('Failed to fetch messages:', error);
@@ -64,7 +64,7 @@ const FloatingChat = () => {
     };
 
     try {
-      await axios.post('http://localhost:4000/api/messages', newMessage);
+      await axios.post('https://buynest-v2-backend.onrender.com/api/messages', newMessage);
       setMessages((prevMessages) => [...prevMessages, newMessage]);
       setTypedMessage('');
     } catch (error) {

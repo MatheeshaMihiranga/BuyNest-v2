@@ -16,7 +16,7 @@ const AssistantDashboard = () => {
   useEffect(() => {
     const fetchSessionRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/assist'); // Fetch assist requests from backend
+        const response = await axios.get('https://buynest-v2-backend.onrender.com/api/assist'); // Fetch assist requests from backend
         if (response.data.success) {
           setSessionRequests(response.data.assist); // Set session requests to state
         } else {
@@ -37,13 +37,13 @@ const AssistantDashboard = () => {
       const userId = request.userId; // Get the user's ID
 
       // Fetch the user's cart data using their userId
-      const cartResponse = await axios.post('http://localhost:4000/api/cart/get', { userId });
+      const cartResponse = await axios.post('https://buynest-v2-backend.onrender.com/api/cart/get', { userId });
 
       if (cartResponse.data.success) {
         const cartItems = cartResponse.data.cartData; // Retrieve the user's cart data
 
         // Mark the assist request as accepted by updating its 'accept' status
-        const acceptResponse = await axios.put(`http://localhost:4000/api/assist/${requestId}`, { accept: true });
+        const acceptResponse = await axios.put(`https://buynest-v2-backend.onrender.com/api/assist/${requestId}`, { accept: true });
 
         if (acceptResponse.data.success) {
           // Navigate to the Live Assistance Interface with cart data and the session request
@@ -63,7 +63,7 @@ const AssistantDashboard = () => {
   const handleRemove = async (requestId) => {
     try {
       // Send a delete request to remove the session
-      const response = await axios.delete(`http://localhost:4000/api/assist/${requestId}`);
+      const response = await axios.delete(`https://buynest-v2-backend.onrender.com/api/assist/${requestId}`);
 
       if (response.data.success) {
         // Filter out the removed request from the sessionRequests state

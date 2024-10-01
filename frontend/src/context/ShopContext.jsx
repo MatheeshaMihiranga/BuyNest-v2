@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
     const [products, setProducts] = useState([]);
     const [token, setToken] = useState('');
     const navigate = useNavigate();
-    const socket = io('http://localhost:4000'); // Connect to the Socket.IO server
+    const socket = io('https://buynest-v2-backend.onrender.com'); // Connect to the Socket.IO server
 
     // Function to add items to the cart
     const addToCart = async (itemId, size) => {
