@@ -29,9 +29,9 @@ const Footer = () => {
         <div className="flex-1">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Get in Touch</h4>
           <ul className="space-y-2">
-            <li className="hover:text-gray-900 transition-colors duration-300">+1-212-456-7890</li>
+            <li className="hover:text-gray-900 transition-colors duration-300">+94124567890</li>
             <li className="hover:text-gray-900 transition-colors duration-300">contact@foreveryou.com</li>
-            <li className="hover:text-gray-900 transition-colors duration-300">123 Fashion Street, New York, USA</li>
+            <li className="hover:text-gray-900 transition-colors duration-300">123 Fashion Street, Colombo, Sri Lanka</li>
           </ul>
         </div>
 
